@@ -20,7 +20,6 @@ namespace APIEstatisticasStacks.Business
         {
             try
             {
-                var teste = await _estatisticaRepository.ObterTodos();
                 var ret = _mapper.Map<IEnumerable<DadosEstatistica>>(await _estatisticaRepository.ObterTodos());
                 return ret;
             }
