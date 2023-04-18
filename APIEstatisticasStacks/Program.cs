@@ -1,5 +1,6 @@
 using APIEstatisticasStacks.Business;
 using APIEstatisticasStacks.Business.Interfaces;
+using APIEstatisticasStacks.Extensions;
 using APIEstatisticasStacks.Repository;
 using APIEstatisticasStacks.Repository.Interfaces;
 using APIEstatisticasStacks.Repositorysitory;
@@ -22,6 +23,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware(typeof(ManipuladorExcecoesConfig));
 
 app.UseHttpsRedirection();
 

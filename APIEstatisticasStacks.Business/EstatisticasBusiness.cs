@@ -18,15 +18,14 @@ namespace APIEstatisticasStacks.Business
 
         public async Task<IEnumerable<DadosEstatistica>> ObterTodos()
         {
-            try
-            {
-                var ret = _mapper.Map<IEnumerable<DadosEstatistica>>(await _estatisticaRepository.ObterTodos());
-                return ret;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            var ret = _mapper.Map<IEnumerable<DadosEstatistica>>(await _estatisticaRepository.ObterTodos());
+            return ret;
+        }
+
+        public async Task<IEnumerable<DadosEstatistica>> ObterTodosOrderByPontos()
+        {
+            var ret = _mapper.Map<IEnumerable<DadosEstatistica>>(await _estatisticaRepository.ObterTodos()).OrderByDescending(x => x.pontos);
+            return ret;
         }
     }
 }

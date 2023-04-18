@@ -1,8 +1,8 @@
-.vs/
-/bin/
-/obj/
-/Debug/
-/Release/
+\.vs\
+\bin\
+\obj\
+\Debug\
+\Release\
 *.exe
 *.pdb
 *.user
